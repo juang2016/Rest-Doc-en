@@ -2960,14 +2960,14 @@ paths:
       responses:
         '200':
           description: |
-            **Parámetros**
+            **Parameter**
 
-            | Nombre | Tipo | Descripción |
+            | Name | Type | Description |
             |-----------|------|-------------|
-            | status | Status | Información del estado de la petición. |
-            | provider | string | Determina el proveedor que procesa la transacción (INTERDIN, DATAFAST, BANRED) |
-            | signature | string | Firma asignada a la comprobación de OTP dela transacción, necesaria para los filtros de
-            seguridad, vacío en caso de no proporcionar el OTP correcto. |
+            | status | Status | information request status. |
+            | provider | string | determines the provider that processes the transaction (INTERDIN, Datafast, BANRED) |
+            | signature | string | Signature assigned to the transaction OTP check, required for the transaction filters.
+            security, empty in case the correct OTP is not provided. |
             | validated | bool  | Determina si el OTP ha sido verificado. |
           content:
             application/json:
@@ -3047,14 +3047,13 @@ paths:
                       total: 120.1
                       currency: USD
         description: |-
-          **Parámetros**
+          **Parameter**
 
-          | Nombre | Tipo | Descripción |
+          | Name | Type | Description |
           |-----------|------|-------------|
-          | locale | string | Definido con los códigos ISO 639 (language) y ISO 3166-1 alpha-2 (2-letras del país) ej. en_US, es_EC, es_CO |
-          | auth | Authentication | Información de autenticación del sitio. |
-          | instrument | Instrument | Estructura de entrada para la tarjeta o token. |
-          | payment | Payment | Información simple del cobro a realizar. |
+          | auth | Authentication | authentication Information site. |
+          | instrument | Instrument | Structure input for card or token. |
+          | payment | Payment | Simple information collection to perform. |
       tags:
         - Proceso OTP
     parameters: []
