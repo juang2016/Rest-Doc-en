@@ -337,7 +337,7 @@ paths:
           | internalReference | bigint | unique code represents the transaction PlacetoPay. |
       description: It allows to consult a transaction.
       tags:
-        - Consulta de una transaccion
+        - Transaction query
   /rest/gateway/information:
     post:
       summary: Request Card Information
