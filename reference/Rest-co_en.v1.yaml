@@ -2955,7 +2955,7 @@ paths:
         - Process OTP
   /rest/otp/validate:
     post:
-      summary: Validación de OTP (solo Ecuador)
+      summary: Validación de OTP (only Ecuador)
       operationId: post-rest-otp-validate
       responses:
         '200':
@@ -3019,10 +3019,10 @@ paths:
                     signature: a8ecc59c2510a8ae27e1724ebf4647b5
                     validated: true
       description: |
-        Permite validar que el OTP provisto concuerde con el enviado por el proveedor, de ser así se
-        retornará un valor “signature” que debe enviarse en la petición de procesamiento como “otp”
-        esto con el fin de que se tome en cuenta a la hora de analizar la transacción por los filtros de
-        seguridad
+        It allows to validate that the OTP provided agrees with the one sent by the provider, if so,
+        it will return a “signature” value that must be sent in the processing request as “otp”
+        this in order to be taken into account when analyzing the transaction by the filters of
+        security
       requestBody:
         content:
           application/json:
@@ -3055,7 +3055,7 @@ paths:
           | instrument | Instrument | Structure input for card or token. |
           | payment | Payment | Simple information collection to perform. |
       tags:
-        - Proceso OTP
+        - Process OTP
     parameters: []
 components:
   schemas: {}
