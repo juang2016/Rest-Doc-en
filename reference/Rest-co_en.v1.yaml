@@ -2622,8 +2622,6 @@ paths:
                           bin: '411111'
                           expiration: '0222'
                           installments: 1
-      tags:
-        - Consulta de una transaccion
       description: 'This service allows the search of transactions by reference and amount, it is usually used in case of loss of communication when creating a transaction to obtain the internal reference again.'
       requestBody:
         content:
@@ -2683,6 +2681,8 @@ paths:
                     currency: COP
                     total: 1000
         description: ''
+      tags:
+        - Transaction query
     parameters: []
   /rest/gateway/interests:
     post:
