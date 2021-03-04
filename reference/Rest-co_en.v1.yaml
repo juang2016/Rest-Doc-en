@@ -1713,7 +1713,7 @@ paths:
     parameters: []
   /rest/gateway/tokenize:
     post:
-      summary: Tokenización (tokenize)
+      summary: Tokenizing (tokenize)
       operationId: post-gateway-tokenize
       responses:
         '200':
@@ -1722,9 +1722,9 @@ paths:
 
             | Nombre | Tipo | Descripción |
             |-----------|------|-------------|
-            | status | Status | Información del estado de la petición. |
-            | provider | string | Determina el proveedor que procesa la transacción (INTERDIN, DATAFAST, BANRED ETC.) |
-            | instrument | Instrument | Estructura de salida para el token. |
+            | status | Status | information request status. |
+            | provider | string | determines the provider that processes the transaction (INTERDIN, Datafast, BANRED) |
+            | instrument | Instrument | output Structure for token. |
           content:
             application/json:
               schema:
@@ -1814,11 +1814,9 @@ paths:
                         lastDigits: '0008'
                         validUntil: 12/21
       description: |
-        Este servicio permite almacenar tarjetas de crédito de manera segura, a través de una petición que contenga la información de la misma, se generará un token que puede ser usado en el servicio de procesamiento y para todos los efectos, en PlacetoPay equivale a una tarjeta de crédito, la diferencia es que se envía la estructura token en vez de card.
+        This service allows store credit cards safely through a request containing the information of the same of the credit card, a token that can be used when processing is generated and for all purposes, in PlacetoPay equivalent it equals to a credit card, the difference is that the token structure is sent instead of card.
 
-        Previamente al consumo de este servicio se debe consultar el de información para saber si es necesario o no generar un OTP al cliente y en caso de ser necesario, solicitar el token a la persona y enviarlo en el consumo.
-      tags:
-        - Tokenizar una tarjeta
+        Prior touse of this service should be consulted for information about whether or not is necessary generate an OTP customer and if necessary, request the token and send to the person on consumption.
       requestBody:
         content:
           application/json:
@@ -1944,12 +1942,13 @@ paths:
 
           | Nombre | Tipo | Descripción |
           |-----------|------|-------------|
-          | locale | string | Definido con los códigos ISO 639 (language) y ISO 3166-1 alpha-2 (2-letras del país) ej. en_US, es_EC, es_CO |
-          | auth | Authentication | Información de autenticación del sitio. |
-          | payer | Person | Información del propietario de la tarjeta. |
-          | instrument | Instrument | Estructura de entrada para la tarjeta o token. |
-          | ipAddress | string | IP del usuario que realiza la transacción. |
-          | userAgent | string | UserAgent del usuario que realiza la transacción. |
+          | auth | Authentication | authentication Information site. |
+          | payer | Person | Information owner card. |
+          | instrument | Instrument | structure input for card or token. |
+          | ipAddress | string | IP of the user making the transaction. |
+          | userAgent | string | UserAgent user making the transaction. |
+      tags:
+        - Card Tokenizing
     parameters: []
   /rest/gateway/transaction:
     post:
