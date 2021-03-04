@@ -1153,7 +1153,7 @@ paths:
 
         Certification questions, especially with Interdin is necessary once the process is completed the response to the user, this is an example in redirection, all data must be present.
       tags:
-        - transaction Processing
+        - Collect Tokenization
     parameters: []
   /rest/gateway/process:
     post:
