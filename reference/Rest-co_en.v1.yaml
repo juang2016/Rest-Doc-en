@@ -612,7 +612,7 @@ paths:
         - Solicitar informacion de una Tarjeta
   /rest/gateway/process/:
     post:
-      summary: Cobrar Tokenizacion
+      summary: Tokenizacion Processing
       operationId: post-gateway-process
       responses:
         '200':
@@ -1153,11 +1153,11 @@ paths:
 
         Certification questions, especially with Interdin is necessary once the process is completed the response to the user, this is an example in redirection, all data must be present.
       tags:
-        - Procesamiento de transaccion
+        - transaction Processing
     parameters: []
   /rest/gateway/process:
     post:
-      summary: Procesamiento de transacción
+      summary: transaction Processing
       operationId: post-gateway-process
       responses:
         '200':
@@ -1599,7 +1599,7 @@ paths:
 
         Certification questions, especially with Interdin is necessary once the process is completed the response to the user, this is an example in redirection, all data must be present.
       tags:
-        - Procesamiento de transaccion
+        - transaction Processing
     parameters: []
   '':
     post:
