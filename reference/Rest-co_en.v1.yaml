@@ -2824,7 +2824,7 @@ paths:
   /rest/otp/generate:
     parameters: []
     post:
-      summary: Generación de OTP (solo Ecuador)
+      summary: Generation OTP  (only Ecuador)
       operationId: post-rest-otp-generate
       responses:
         '200':
@@ -2956,7 +2956,7 @@ paths:
           | auth | Authentication | Información de autenticación del sitio. |
           | instrument | Instrument | Estructura de entrada para la tarjeta o token. |
       tags:
-        - Proceso OTP
+        - Process OTP
   /rest/otp/validate:
     post:
       summary: Validación de OTP (solo Ecuador)
