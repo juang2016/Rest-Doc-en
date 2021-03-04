@@ -2819,7 +2819,7 @@ paths:
           | instrument | Instrument | structure input for card or token. |
           | payment | Payment | Information simple the collection to perform. |
       tags:
-        - Calculo de intereses
+        - Interest Calculation
     parameters: []
   /rest/otp/generate:
     parameters: []
