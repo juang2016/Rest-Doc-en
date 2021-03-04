@@ -2686,7 +2686,7 @@ paths:
     parameters: []
   /rest/gateway/interests:
     post:
-      summary: Cálculo de Intereses (solo Ecuador)
+      summary: Interest Calculation (only Ecuador)
       operationId: post-rest-gateway-interests
       responses:
         '200':
@@ -2705,9 +2705,7 @@ paths:
                 type: object
                 properties: {}
       description: |
-        Este servicio se debe consumir si la tarjeta requiere que se muestren los intereses
-        (displayInterest en true) y como ejemplo de esta manera se muestran los valores en el servicio
-        de redirección.
+        this service should be consumed if the card requires interest (displayInterest true) display as example in this way the values are displayed in the service redirection.
       requestBody:
         content:
           application/json:
@@ -2813,14 +2811,13 @@ paths:
                       total: 120.1
                       currency: USD
         description: |
-          **Parámetros**
+          **Parameter**
 
-          | Nombre | Tipo | Descripción |
+          | Name | Type | Description |
           |-----------|------|-------------|
-          | locale | string | Definido con los códigos ISO 639 (language) y ISO 3166-1 alpha-2 (2-letras del país) ej. en_US, es_EC, es_CO |
-          | auth | Authentication | Información de autenticación del sitio. |
-          | instrument | Instrument | Estructura de entrada para la tarjeta o token. |
-          | payment | Payment | Información simple del cobro a realizar. |
+          | auth | Authentication | authentication Information site. |
+          | instrument | Instrument | structure input for card or token. |
+          | payment | Payment | Information simple the collection to perform. |
       tags:
         - Calculo de intereses
     parameters: []
