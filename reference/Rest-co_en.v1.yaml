@@ -2233,9 +2233,9 @@ paths:
                   authorization: '999999'
                   action: reverse
         description: |
-          **Parámetros**
+          **Parameter**
 
-          | Nombre | Tipo | Descripción |
+          | Name | Type | Description |
           |-----------|------|-------------|
           | auth | Authentication | authentication Information site. |
           | internalReference | bigint | bigint unique code represents the transaction in PlacetoPay. |
@@ -2695,10 +2695,10 @@ paths:
 
             | Nombre | Tipo | Descripción |
             |-----------|------|-------------|
-            | status | Status | Información del estado de la petición. |
-            | provider | string | Determina el proveedor que procesa la transacción (INTERDIN, DATAFAST, BANRED) |
-            | values  | InterestValues | Valores para el monto y el tipo de crédito enviado. |
-            | conversion  | AmountConversion | Si se realiza una conversión de moneda se proporciona la información de dicha conversion, null si no se realizó. |
+            | status | Status | information request status. |
+            | provider | string | determines the provider that processes the transaction (INTERDIN, Datafast, BANRED) |
+            | values  | InterestValues | values for the amount and type of credit sent. |
+            | conversion  | AmountConversion | if a currency conversion is made, the information of this conversion is provided, null if it was not made| 
           content:
             application/json:
               schema:
