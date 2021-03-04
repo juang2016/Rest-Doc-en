@@ -1640,45 +1640,46 @@ paths:
                     seed: '2021-03-02T22:28:15+00:00'
                     nonce: MjA0NjIzODY1Ng==
       description: |
-        Estructura que contiene la información de autenticación del sitio generada de acuerdo al WSSE UsernameToken Profile 1.1
 
-        Todas las solicitudes al web deben ser autenticadas con Web Services Security UsernameToken Profile 1.1.
+        Structure that contains the authentication information of the site generated according to the WSSE UsernameToken Profile 1.1
+
+        All requests to the web must be authenticated with Web Services Security UsernameToken Profile 1.1.
         https://www.oasis-open.org/committees/download.php/13392/wss-v1.1-spec-pr-UsernameTokenProfile-01.htm
 
-        Usando PasswordDigest
+        Using PasswordDigest
 
         **PasswordDigest = Base64 ( SHA-256 ( nonce + seed + tranKey ) )**
 
-        `El login y el secretKey son suministrados por PlacetoPay`
+        `The login and secretKey are supplied by PlacetoPay`
 
-        `Esta estructura debe de ser enviada en cada petición realizada al servicio`
+        `This structure must be sent in each request made to the service`
 
-         `El seed no puede tener diferencia de más de 5 minutos.`
+         `The seed cannot have a difference of more than 5 minutes.`
          
 
-        **Solución de problemas**
+        **Troubleshooting**
 
-        Códigos de respuesta para la autenticación fallida y su significado.
+        Authentication failure response codes.
 
         | Codigo | Significado |
         |-----------|-------------|
-        | 100 | UsernameToken no proporcionado (encabezado de la autorización malformado) |
-        | 101  | Identificador de sitio no existe ( login incorrecto o no se encuentra en el ambiente) |
-        | 102  | El hash de TranKey no coincide (Trankey incorrecto o malformado) |
-        | 103  | Fecha de la semilla mayor de 5 minutos |
-        | 104  | Sitio inactivo |
-        | 105  | Sitio expirado |
-        | 106  | Credenciales expiradas |
-        | 107  | Mala definición del UsernameToken (No cumple con el encabezado WSSE) |
-        | 200  | Saltar el encabezado de autenticación SOAP |
-        | 10001  | Contacte a Soporte |
+        | 100 | No UsernameToken provided (Authorization Header Malformed) |
+        | 101  | Login does not exists (Wrong login, or not the correct environment) |
+        | 102  | TranKey hash does not match (Malformed or incorrect tranKey) |
+        | 103  | Seed date older than 5 minutes |
+        | 104  | Inactive site |
+        | 105  | Expired site |
+        | 106  | Expired credentials |
+        | 107  | Bad UsernameToken definition (Not compliant WSSE header) |
+        | 200  | Skipping SOAP authentication Header |
+        | 10001  | Contact Support |
 
 
-        En la parte derecha puede simular la generacion de la autenticación requerida para cada una de las solicitudes que se realicen a la pasarela de pagos (webcheckout), dicho método recibe un login y un trankey por médio de una solicitud POST, internamente se realiza el procesamiento de la información para retornar una structura JSON que puede ser copiada y pegada en las demás solicitudes dentro del objeto auth.
+        On the right side you can simulate the generation of the authentication required for each of the requests made to the payment gateway (webcheckout), this method receives a login and a trankey through a POST request, internally the processing is performed of the information to return a JSON structure that can be copied and pasted in the other requests within the auth object.
 
-        Cabe aclarar que éste método se provee cómo una ayuda para generar la estructura de autenticación de las solicitudes y no hace parte de los método de integración de webcheckout
+        It should be clarified that this method is provided as an aid to generate the authentication structure of the requests and is not part of the webcheckout integration method
 
-        url referencia autenticación: https://placetopay.github.io/web-checkout-api-docs/?shell#authentication-ecuador
+        url reference authentication: https://placetopay.github.io/web-checkout-api-docs/?shell#authentication-ecuador
       requestBody:
         content:
           application/json:
