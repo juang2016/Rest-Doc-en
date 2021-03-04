@@ -612,7 +612,7 @@ paths:
         - Solicitar informacion de una Tarjeta
   /rest/gateway/process/:
     post:
-      summary: Tokenizacion Processing
+      summary: Tokenizing  Processing
       operationId: post-gateway-process
       responses:
         '200':
