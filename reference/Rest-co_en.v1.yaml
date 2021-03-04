@@ -1605,10 +1605,10 @@ paths:
 
             | Nombre | Tipo | Descripción |
             |-----------|------|-------------|
-            | login | string | Identificador del sitio a usar. |
-            | tranKey | string | Digest tranKey usando la `explicación provista` |
-            | nonce | string | Valor aleatorio generado por cada petición en BASE64 |
-            | seed | string | Fecha de generación de esta estructura en ISO 8601. |
+            | login | string | identifier site using. |
+            | tranKey | string | Digest tranKey using the `provided explanation` |
+            | nonce | string | random value generated for each request in BASE64 |
+            | seed | string | Date of generation of this structure in ISO 8601. |
           content:
             application/json:
               schema:
@@ -1640,8 +1640,7 @@ paths:
                     seed: '2021-03-02T22:28:15+00:00'
                     nonce: MjA0NjIzODY1Ng==
       description: |
-
-        Structure that contains the authentication information of the site generated according to the WSSE UsernameToken Profile 1.1
+        structure containing the authentication information generated according to site WSSE UsernameToken Profile 1.1
 
         All requests to the web must be authenticated with Web Services Security UsernameToken Profile 1.1.
         https://www.oasis-open.org/committees/download.php/13392/wss-v1.1-spec-pr-UsernameTokenProfile-01.htm
