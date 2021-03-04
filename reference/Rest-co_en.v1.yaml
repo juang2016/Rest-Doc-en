@@ -340,32 +340,32 @@ paths:
         - Consulta de una transaccion
   /rest/gateway/information:
     post:
-      summary: Solicitud de Información
+      summary: Request for Information
       operationId: post-rest-gateway-information
       responses:
         '200':
-          description: |-
-            **Parámetros**
+          description: |
+            **Parameters**
 
-            | Nombre | Tipo | Descripción |
+            | Name | Type | Description |
             |-----------|------|-------------|
-            | status | Status | Información del estado de la petición. |
-            | provider | string |Determina el proveedor que procesa la transacción (INTERDIN, DATAFAST, BANRED, CREDIBANCO etc) |
-            | cardTypes | string[] | Tipos de tarjeta soportados |
-            | requireOtp | bool | Determina si se necesita un OTP para procesar. |
-            | requireCvv2 | bool | Determina si se requiere obtener el CVV2 del usuario. |
-            | three DS3DSecure | string | Determina si la tarjeta requiere una autenticación previa con el servicio de 3DSecure (unsupported, required, optional) |
-            | credits | Credit[] | Arreglo de tipos de crédito disponibles, arreglo vacío si no es soportado por el proveedor. |
+            | status | Status | Status Information the request. |
+            | provider | string |Determines the provider processes the transaction (INTERDIN, Datafast, BANRED) |
+            | cardTypes | string[] | card types supported |
+            | requireOtp | bool | Determines whether an OTP is needed to process. |
+            | requireCvv2 | bool | Determines if required obtain the CVV2 user. |
+            | three DS3DSecure | string | Determines If the card requires prior authentication service 3DSecure (unsupported, required, optional) |
+            | credits | arrangement types of credit available, empty array if it is not supported by the provider. |
 
 
-            En el ejemplo de la respuesta hay un tipo de crédito “DIF PLUS PAGO TOTAL” y este tiene 3, 6, 9 ,12 en el arreglo de installments, se debe dar la opción al usuario de seleccionar
+            In the example of the response there is a type of credit "DIF PLUS PAYMENT TOTAL" and this has 3, 6, 9, 12 in the arrangement installments, you should be given the option to user to select
 
-            DIF PLUS PAGO TOTAL (3) meses
-            DIF PLUS PAGO TOTAL (6) meses
-            DIF PLUS PAGO TOTAL (9) meses
-            DIF PLUS PAGO TOTAL (12) meses
+            DIF PLUS PAYMENT TOTAL (3) months
+            DIF PLUS PAYMENT TOTAL (6) months
+            DIF PLUS PAYMENT TOTAL (9) months
+            DIF PLUS PAYMENT TOTAL (12) months
 
-            Y así sucesivamente, este es un ejemplo de como se muestran en el servicio de redirección en un select
+            and so on, this is an example as shown in the redirection service in a select
           content:
             application/json:
               schema:
@@ -596,19 +596,18 @@ paths:
                       total: 1000
                       currency: COP
         description: |-
-          Solicitud de Información (informationRequest)
+          Request for Information  (informationRequest)
           POST /gateway/information
 
-          **Parámetros**
+          **Parameters**
 
-          | Nombre | Tipo | Descripción |
+          | Name | Type | Description |
           |-----------|------|-------------|
-          | locale | string | Definido con los códigos ISO 639 (language) y ISO 3166-1 alpha-2 (2-letras del país) ej. en_US, es_EC, es_CO |
-          | auth | Authentication | Información de autenticación del sitio. |
-          | instrument | Instrument | Estructura de entrada para la tarjeta o token. | 
-          | payment | Payment | Información simple del cobro a realizar. |
+          | auth | Authentication | Authentication Information Site. |
+          | instrument | Instrument | intake structure for card or token. | 
+          | payment | Payment | Simple information collection to perform. |
       description: |
-        Este servicio proporciona información sobre la tarjeta del usuario que se va a procesar, tal como qué servicios son los que se usarán para ella y los tipos de crédito, si aplica, que hay para esta, si no hay tipos de crédito se retorna un arreglo vacío y si los hay, se debe iterar cada tipo de crédito con los installments que se encuentran en el arreglo.
+        This service provides information about the card of the user to be processed, as well as the services used for the types of credit, if applicable, each type of credit must be shown with the quotas that are in the arrangement.
       tags:
         - Solicitar informacion de una Tarjeta
   /rest/gateway/process/:
