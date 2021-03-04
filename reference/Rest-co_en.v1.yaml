@@ -340,7 +340,7 @@ paths:
         - Consulta de una transaccion
   /rest/gateway/information:
     post:
-      summary: Request for Information
+      summary: Request Card Information
       operationId: post-rest-gateway-information
       responses:
         '200':
@@ -609,7 +609,7 @@ paths:
       description: |
         This service provides information about the card of the user to be processed, as well as the services used for the types of credit, if applicable, each type of credit must be shown with the quotas that are in the arrangement.
       tags:
-        - Solicitar informacion de una Tarjeta
+        - Request Card Information
   /rest/gateway/process/:
     post:
       summary: Tokenizing  Processing
@@ -2246,7 +2246,7 @@ paths:
     parameters: []
   /rest/gateway/search:
     post:
-      summary: Búsqueda de transacciones
+      summary: search  transaction
       operationId: post-gateway-search
       responses:
         '200':
@@ -2624,7 +2624,7 @@ paths:
                           installments: 1
       tags:
         - Consulta de una transaccion
-      description: 'Este servicio permite la búsqueda de transacciones por referencia y monto, suele utilizarse en caso de pérdida de comunicación al crear una transacción para obtener la referencia interna nuevamente.'
+      description: 'This service allows the search of transactions by reference and amount, it is usually used in case of loss of communication when creating a transaction to obtain the internal reference again.'
       requestBody:
         content:
           application/json:
