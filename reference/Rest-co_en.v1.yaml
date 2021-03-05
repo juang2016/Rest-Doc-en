@@ -8,6 +8,8 @@ servers:
     description: Test Mode Colombia
   - url: 'https://test.placetopay.ec/'
     description: Test Mode Ecuador
+  - url: 'https://authe-ptp.herokuapp.com/uth-ec.php'
+    description: ''
 paths:
   /rest/gateway/query:
     post:
