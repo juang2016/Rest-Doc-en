@@ -9,7 +9,7 @@ servers:
   - url: 'https://test.placetopay.ec/'
     description: Test Mode Ecuador
   - url: 'https://authe-ptp.herokuapp.com/uth-ec.php'
-    description: ''
+    description: Authentication API
 paths:
   /rest/gateway/query:
     post:
